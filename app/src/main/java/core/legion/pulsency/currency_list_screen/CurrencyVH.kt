@@ -7,11 +7,11 @@ import core.legion.pulsency.R
 import core.legion.pulsency.model.pojo.CurrencyItem
 import kotlinx.android.synthetic.main.item_currency.view.*
 
-class CurrencyVH(val parent: ViewGroup) : RecyclerView.ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_currency, parent)) {
+class CurrencyVH(val parent: ViewGroup) : RecyclerView.ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_currency, parent, false)) {
 
     fun bind(item: CurrencyItem) {
         itemView.tvName.text = item.name
-        itemView.tvAmount.text = item.amount.toString()
+        itemView.tvAmount.text = item.price.amount.toString()
         itemView.tvVolume.text = item.volume.toString()
     }
 }

@@ -10,7 +10,13 @@ class CurrencyListPresenter @Inject constructor() : CurrencyListFacade.Presenter
 
     override fun onViewCreated() {
         currencyManager
-                .loadCurrencies()
-                .subscribe()
+                .onUpdate()
+                .subscribe({ view.showCurrencies(it) }, { view.showToast(it.localizedMessage) })
+    }
+
+    override fun onRefreshClick() {
+        currencyManager
+                .getCurrencies()
+                .subscribe({ view.showCurrencies(it) }, { view.showToast(it.message!!) })
     }
 }

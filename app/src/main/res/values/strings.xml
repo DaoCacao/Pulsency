@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Pulsency</string>
+    <string name="txt_refresh">Refresh</string>
 </resources>
